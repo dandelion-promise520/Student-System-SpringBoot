@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.StuScoreMapper">
+    
+    <resultMap type="StuScore" id="StuScoreResult">
+        <result property="scoreId"    column="score_id"    />
+        <result property="studentId"    column="student_id"    />
+        <result property="courseId"    column="course_id"    />
+        <result property="score"    column="score"    />
+        <result property="term"    column="term"    />
+        <result property="examDate"    column="exam_date"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="remark"    column="remark"    />
+        <result property="studentName" column="student_name" />
+        <result property="courseName"  column="course_name"  />
+    </resultMap>
+
+    <sql id="selectStuScoreVo">
+        select s.score_id, s.student_id, s.course_id, s.score, s.term, s.exam_date,
+        s.create_by, s.create_time, s.update_by, s.update_time, s.remark,
+        stu.student_name, c.course_name
+        from stu_score s
+        left join stu_student stu on s.student_id = stu.student_id
+        left join stu_course c on s.course_id = c.course_id
+    </sql>
+
+    <select id="selectStuScoreList" parameterType="StuScore" resultMap="StuScoreResult">
+        <include refid="selectStuScoreVo"/>
+        <where>  
+            <if test="studentId != null "> and student_id = #{studentId}</if>
+            <if test="courseId != null "> and course_id = #{courseId}</if>
+            <if test="params.beginScore != null and params.beginScore != '' and params.endScore != null and params.endScore != ''"> and score between #{params.beginScore} and #{params.endScore}</if>
+            <if test="term != null  and term != ''"> and term = #{term}</if>
+            <if test="examDate != null "> and exam_date = #{examDate}</if>
+        </where>
+    </select>
+    
+    <select id="selectStuScoreByScoreId" parameterType="Long" resultMap="StuScoreResult">
+        <include refid="selectStuScoreVo"/>
+        where score_id = #{scoreId}
+    </select>
+
+    <insert id="insertStuScore" parameterType="StuScore" useGeneratedKeys="true" keyProperty="scoreId">
+        insert into stu_score
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="studentId != null">student_id,</if>
+            <if test="courseId != null">course_id,</if>
+            <if test="score != null">score,</if>
+            <if test="term != null">term,</if>
+            <if test="examDate != null">exam_date,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="remark != null">remark,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="studentId != null">#{studentId},</if>
+            <if test="courseId != null">#{courseId},</if>
+            <if test="score != null">#{score},</if>
+            <if test="term != null">#{term},</if>
+            <if test="examDate != null">#{examDate},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="remark != null">#{remark},</if>
+         </trim>
+    </insert>
+
+    <update id="updateStuScore" parameterType="StuScore">
+        update stu_score
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="studentId != null">student_id = #{studentId},</if>
+            <if test="courseId != null">course_id = #{courseId},</if>
+            <if test="score != null">score = #{score},</if>
+            <if test="term != null">term = #{term},</if>
+            <if test="examDate != null">exam_date = #{examDate},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="remark != null">remark = #{remark},</if>
+        </trim>
+        where score_id = #{scoreId}
+    </update>
+
+    <delete id="deleteStuScoreByScoreId" parameterType="Long">
+        delete from stu_score where score_id = #{scoreId}
+    </delete>
+
+    <delete id="deleteStuScoreByScoreIds" parameterType="String">
+        delete from stu_score where score_id in 
+        <foreach item="scoreId" collection="array" open="(" separator="," close=")">
+            #{scoreId}
+        </foreach>
+    </delete>
+</mapper>
