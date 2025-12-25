@@ -2,6 +2,9 @@ package com.ruoyi.system.controller;
 
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;
+
+import com.ruoyi.system.domain.StuClass;
+import com.ruoyi.system.service.IStuClassService;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,6 +37,9 @@ public class StuStudentController extends BaseController
     @Autowired
     private IStuStudentService stuStudentService;
 
+    @Autowired
+    private IStuClassService stuClassService; // 报错的话请 Alt+Enter 导包
+
     /**
      * 查询学生信息列表
      */
@@ -44,6 +50,16 @@ public class StuStudentController extends BaseController
         startPage();
         List<StuStudent> list = stuStudentService.selectStuStudentList(stuStudent);
         return getDataTable(list);
+    }
+
+    /**
+     * 获取班级下拉选择列表
+     */
+    @GetMapping("/classList")
+    public AjaxResult getClassList()
+    {
+        // 传入一个空的 StuClass 对象，查询出所有班级数据
+        return success(stuClassService.selectStuClassList(new StuClass()));
     }
 
     /**

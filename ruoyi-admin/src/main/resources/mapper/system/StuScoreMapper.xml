@@ -29,14 +29,36 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         left join stu_course c on s.course_id = c.course_id
     </sql>
 
+<!--    <select id="selectStuScoreList" parameterType="StuScore" resultMap="StuScoreResult">-->
+<!--        <include refid="selectStuScoreVo"/>-->
+<!--        <where>  -->
+<!--            <if test="studentId != null "> and student_id = #{studentId}</if>-->
+<!--            <if test="courseId != null "> and course_id = #{courseId}</if>-->
+<!--            <if test="params.beginScore != null and params.beginScore != '' and params.endScore != null and params.endScore != ''"> and score between #{params.beginScore} and #{params.endScore}</if>-->
+<!--            <if test="term != null  and term != ''"> and term = #{term}</if>-->
+<!--            <if test="examDate != null "> and exam_date = #{examDate}</if>-->
+<!--        </where>-->
+<!--    </select>-->
+
     <select id="selectStuScoreList" parameterType="StuScore" resultMap="StuScoreResult">
         <include refid="selectStuScoreVo"/>
-        <where>  
-            <if test="studentId != null "> and student_id = #{studentId}</if>
-            <if test="courseId != null "> and course_id = #{courseId}</if>
-            <if test="params.beginScore != null and params.beginScore != '' and params.endScore != null and params.endScore != ''"> and score between #{params.beginScore} and #{params.endScore}</if>
-            <if test="term != null  and term != ''"> and term = #{term}</if>
-            <if test="examDate != null "> and exam_date = #{examDate}</if>
+        <where>
+            <if test="studentId != null "> and s.student_id = #{studentId}</if>
+            <if test="courseId != null "> and s.course_id = #{courseId}</if>
+
+            <if test="params.beginScore != null and params.beginScore != '' and params.endScore != null and params.endScore != ''">
+                and s.score between #{params.beginScore} and #{params.endScore}
+            </if>
+
+            <if test="term != null and term != ''"> and s.term = #{term}</if>
+            <if test="examDate != null "> and s.exam_date = #{examDate}</if>
+
+            <if test="params.studentName != null and params.studentName != ''">
+                and stu.student_name like concat('%', #{params.studentName}, '%')
+            </if>
+            <if test="params.courseName != null and params.courseName != ''">
+                and c.course_name like concat('%', #{params.courseName}, '%')
+            </if>
         </where>
     </select>
     
