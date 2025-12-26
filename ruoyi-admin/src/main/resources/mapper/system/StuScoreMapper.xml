@@ -50,7 +50,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
                 and s.score between #{params.beginScore} and #{params.endScore}
             </if>
 
-            <if test="term != null and term != ''"> and s.term = #{term}</if>
+<!--            <if test="term != null and term != ''"> and s.term = #{term}</if>-->
+            <if test="term != null and term != ''">
+                and s.term like concat('%', #{term}, '%')
+            </if>
+
             <if test="examDate != null "> and s.exam_date = #{examDate}</if>
 
             <if test="params.studentName != null and params.studentName != ''">
