@@ -5,7 +5,7 @@
     <parent>
         <artifactId>dandelion</artifactId>
         <groupId>com.dandelion</groupId>
-        <version>3.9.1</version>
+        <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -55,7 +55,7 @@
 
         <!-- 系统模块-->
         <dependency>
-            <groupId>com.ruoyi</groupId>
+            <groupId>com.dandelion</groupId>
             <artifactId>dandelion-system</artifactId>
         </dependency>
 

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @author dandelion
  */
 @Component
-@ConfigurationProperties(prefix = "ruoyi")
+@ConfigurationProperties(prefix = "dandelion")
 public class DandelionConfig
 {
     /** 项目名称 */

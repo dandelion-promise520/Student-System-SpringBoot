@@ -4,16 +4,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	
-    <groupId>com.ruoyi</groupId>
+    <groupId>com.dandelion</groupId>
     <artifactId>dandelion</artifactId>
-    <version>3.9.1</version>
+    <version>1.0.0</version>
 
-    <name>ruoyi</name>
-    <url>http://www.ruoyi.vip</url>
-    <description>若依管理系统</description>
+    <name>dandelion</name>
+    <url>http://www.dandelion.vip</url>
+    <description>学生管理系统</description>
     
     <properties>
-        <ruoyi.version>3.9.1</ruoyi.version>
+        <dandelion.version>1.0.0</dandelion.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
@@ -185,37 +185,37 @@
 
             <!-- 定时任务-->
             <dependency>
-                <groupId>com.ruoyi</groupId>
+                <groupId>com.dandelion</groupId>
                 <artifactId>dandelion-quartz</artifactId>
-                <version>${ruoyi.version}</version>
+                <version>${dandelion.version}</version>
             </dependency>
 
             <!-- 代码生成-->
             <dependency>
-                <groupId>com.ruoyi</groupId>
+                <groupId>com.dandelion</groupId>
                 <artifactId>dandelion-generator</artifactId>
-                <version>${ruoyi.version}</version>
+                <version>${dandelion.version}</version>
             </dependency>
 
             <!-- 核心模块-->
             <dependency>
-                <groupId>com.ruoyi</groupId>
+                <groupId>com.dandelion</groupId>
                 <artifactId>dandelion-framework</artifactId>
-                <version>${ruoyi.version}</version>
+                <version>${dandelion.version}</version>
             </dependency>
 
             <!-- 系统模块-->
             <dependency>
-                <groupId>com.ruoyi</groupId>
+                <groupId>com.dandelion</groupId>
                 <artifactId>dandelion-system</artifactId>
-                <version>${ruoyi.version}</version>
+                <version>${dandelion.version}</version>
             </dependency>
 
             <!-- 通用工具-->
             <dependency>
-                <groupId>com.ruoyi</groupId>
+                <groupId>com.dandelion</groupId>
                 <artifactId>dandelion-common</artifactId>
-                <version>${ruoyi.version}</version>
+                <version>${dandelion.version}</version>
             </dependency>
 
         </dependencies>
