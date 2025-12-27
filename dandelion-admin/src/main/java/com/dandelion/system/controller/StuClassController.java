@@ -20,6 +20,7 @@ import com.dandelion.system.domain.StuClass;
 import com.dandelion.system.service.IStuClassService;
 import com.dandelion.common.utils.poi.ExcelUtil;
 import com.dandelion.common.core.page.TableDataInfo;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * 班级信息Controller
@@ -100,5 +101,29 @@ public class StuClassController extends BaseController
     public AjaxResult remove(@PathVariable Long[] classIds)
     {
         return toAjax(stuClassService.deleteStuClassByClassIds(classIds));
+    }
+
+    /**
+     * 导入班级信息数据
+     */
+    @Log(title = "班级信息", businessType = BusinessType.IMPORT)
+    @PreAuthorize("@ss.hasPermi('system:class:import')")
+    @PostMapping("/importData")
+    public AjaxResult importData(MultipartFile file, boolean updateSupport) throws Exception
+    {
+        ExcelUtil<StuClass> util = new ExcelUtil<StuClass>(StuClass.class);
+        List<StuClass> classList = util.importExcel(file.getInputStream());
+        String message = stuClassService.importClass(classList, updateSupport);
+        return AjaxResult.success(message);
+    }
+
+    /**
+     * 下载导入模板
+     */
+    @PostMapping("/importTemplate")
+    public void importTemplate(HttpServletResponse response)
+    {
+        ExcelUtil<StuClass> util = new ExcelUtil<StuClass>(StuClass.class);
+        util.importTemplateExcel(response, "班级数据导入模板");
     }
 }

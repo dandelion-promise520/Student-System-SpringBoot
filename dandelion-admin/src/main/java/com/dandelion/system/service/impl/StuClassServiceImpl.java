@@ -1,7 +1,10 @@
 package com.dandelion.system.service.impl;
 
 import java.util.List;
+
+import com.dandelion.common.exception.ServiceException;
 import com.dandelion.common.utils.DateUtils;
+import com.dandelion.common.utils.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
@@ -130,5 +133,54 @@ public class StuClassServiceImpl implements IStuClassService
                 stuClassMapper.batchStuStudent(list);
             }
         }
+    }
+
+    @Override
+    public String importClass(List<StuClass> classList, Boolean isUpdateSupport) {
+        if (StringUtils.isNull(classList) || classList.size() == 0) {
+            throw new ServiceException("导入班级数据不能为空！");
+        }
+        int successNum = 0;
+        int failureNum = 0;
+        StringBuilder successMsg = new StringBuilder();
+        StringBuilder failureMsg = new StringBuilder();
+        String operName = SecurityUtils.getUsername();
+
+        for (StuClass stuClass : classList) {
+            try {
+                // 1. 验证班级编号是否为空
+                if (StringUtils.isEmpty(stuClass.getClassCode())) {
+                    failureNum++;
+                    failureMsg.append("<br/>导入失败：班级编号不能为空");
+                    continue;
+                }
+
+                // 2. 检查班级编号是否存在 (需要去 Mapper 定义此方法)
+                StuClass c = stuClassMapper.selectClassByCode(stuClass.getClassCode());
+
+                if (StringUtils.isNull(c)) {
+                    stuClass.setCreateBy(operName);
+                    stuClassMapper.insertStuClass(stuClass);
+                    successNum++;
+                } else if (isUpdateSupport) {
+                    stuClass.setClassId(c.getClassId());
+                    stuClass.setUpdateBy(operName);
+                    stuClassMapper.updateStuClass(stuClass);
+                    successNum++;
+                } else {
+                    failureNum++;
+                    failureMsg.append("<br/>班级编号 " + stuClass.getClassCode() + " 已存在");
+                }
+            } catch (Exception e) {
+                failureNum++;
+                failureMsg.append("<br/>班级编号 " + stuClass.getClassCode() + " 导入异常：" + e.getMessage());
+            }
+        }
+
+        if (failureNum > 0) {
+            failureMsg.insert(0, "导入部分失败！共 " + failureNum + " 条错误：");
+            throw new ServiceException(failureMsg.toString());
+        }
+        return "恭喜您，数据已全部导入成功！共 " + successNum + " 条。";
     }
 }

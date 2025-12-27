@@ -58,4 +58,11 @@ public interface StuStudentMapper
      * @return 结果
      */
     public int deleteStuStudentByStudentIds(Long[] studentIds);
+
+    /**
+     * 通过学号查询学生
+     * * @param studentNumber 学号
+     * @return 学生信息
+     */
+    public StuStudent selectStuStudentByNumber(String studentNumber);
 }

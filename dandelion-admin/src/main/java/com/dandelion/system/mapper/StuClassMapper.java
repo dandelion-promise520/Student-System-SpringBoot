@@ -84,4 +84,6 @@ public interface StuClassMapper
      * @return 结果
      */
     public int deleteStuStudentByClassId(Long classId);
+
+    public StuClass selectClassByCode(String classCode);
 }

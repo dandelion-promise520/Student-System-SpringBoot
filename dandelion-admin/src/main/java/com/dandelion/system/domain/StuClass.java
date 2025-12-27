@@ -28,9 +28,8 @@ public class StuClass extends BaseEntity
     private String classCode;
 
     /** 年级 */
-    @Excel(name = "年级")
+    @Excel(name = "年级", dictType = "sys_student_grade")
     private String grade;
-
     /** 班主任 */
     @Excel(name = "班主任")
     private String teacherName;

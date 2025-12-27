@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import com.dandelion.common.annotation.Log;
 import com.dandelion.common.core.controller.BaseController;
 import com.dandelion.common.core.domain.AjaxResult;
@@ -26,8 +27,7 @@ import com.dandelion.common.core.page.TableDataInfo;
 
 /**
  * 学生信息Controller
- * 
- * @author dandelion
+ * * @author dandelion
  * @date 2025-12-25
  */
 @RestController
@@ -38,7 +38,7 @@ public class StuStudentController extends BaseController
     private IStuStudentService stuStudentService;
 
     @Autowired
-    private IStuClassService stuClassService; // 报错的话请 Alt+Enter 导包
+    private IStuClassService stuClassService;
 
     /**
      * 查询学生信息列表
@@ -58,8 +58,31 @@ public class StuStudentController extends BaseController
     @GetMapping("/classList")
     public AjaxResult getClassList()
     {
-        // 传入一个空的 StuClass 对象，查询出所有班级数据
         return success(stuClassService.selectStuClassList(new StuClass()));
+    }
+
+    /**
+     * 导入学生信息数据
+     */
+    @Log(title = "学生信息", businessType = BusinessType.IMPORT)
+    @PreAuthorize("@ss.hasPermi('system:student:import')")
+    @PostMapping("/importData")
+    public AjaxResult importData(MultipartFile file, boolean updateSupport) throws Exception
+    {
+        ExcelUtil<StuStudent> util = new ExcelUtil<StuStudent>(StuStudent.class);
+        List<StuStudent> studentList = util.importExcel(file.getInputStream());
+        String message = stuStudentService.importStudent(studentList, updateSupport);
+        return AjaxResult.success(message);
+    }
+
+    /**
+     * 下载导入模板
+     */
+    @PostMapping("/importTemplate")
+    public void importTemplate(HttpServletResponse response)
+    {
+        ExcelUtil<StuStudent> util = new ExcelUtil<StuStudent>(StuStudent.class);
+        util.importTemplateExcel(response, "学生数据导入模板");
     }
 
     /**
@@ -112,7 +135,7 @@ public class StuStudentController extends BaseController
      */
     @PreAuthorize("@ss.hasPermi('system:student:remove')")
     @Log(title = "学生信息", businessType = BusinessType.DELETE)
-	@DeleteMapping("/{studentIds}")
+    @DeleteMapping("/{studentIds}")
     public AjaxResult remove(@PathVariable Long[] studentIds)
     {
         return toAjax(stuStudentService.deleteStuStudentByStudentIds(studentIds));

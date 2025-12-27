@@ -58,4 +58,6 @@ public interface IStuClassService
      * @return 结果
      */
     public int deleteStuClassByClassId(Long classId);
+
+    public String importClass(List<StuClass> classList, Boolean isUpdateSupport);
 }

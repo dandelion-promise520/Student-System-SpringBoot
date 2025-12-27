@@ -46,6 +46,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         where student_id = #{studentId}
     </select>
 
+    <select id="selectStuStudentByNumber" parameterType="String" resultMap="StuStudentResult">
+        <include refid="selectStuStudentVo"/>
+        where student_number = #{studentNumber}
+    </select>
+
     <insert id="insertStuStudent" parameterType="StuStudent" useGeneratedKeys="true" keyProperty="studentId">
         insert into stu_student
         <trim prefix="(" suffix=")" suffixOverrides=",">
