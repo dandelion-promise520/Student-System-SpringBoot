@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.ArrayUtils;
-import com.dandelion.common.config.RuoYiConfig;
+import com.dandelion.common.config.DandelionConfig;
 import com.dandelion.common.constant.Constants;
 import com.dandelion.common.utils.DateUtils;
 import com.dandelion.common.utils.StringUtils;
@@ -23,7 +23,7 @@ import com.dandelion.common.utils.uuid.IdUtils;
 /**
  * 文件处理工具类
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class FileUtils
 {
@@ -74,7 +74,7 @@ public class FileUtils
      */
     public static String writeImportBytes(byte[] data) throws IOException
     {
-        return writeBytes(data, RuoYiConfig.getImportPath());
+        return writeBytes(data, DandelionConfig.getImportPath());
     }
 
     /**

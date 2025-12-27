@@ -5,7 +5,7 @@ import com.dandelion.common.utils.StringUtils;
 /**
  * 路由显示信息
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class MetaVo
 {

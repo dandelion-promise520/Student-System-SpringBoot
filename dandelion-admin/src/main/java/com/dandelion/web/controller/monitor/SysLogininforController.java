@@ -23,7 +23,7 @@ import com.dandelion.system.service.ISysLogininforService;
 /**
  * 系统访问记录
  * 
- * @author ruoyi
+ * @author dandelion
  */
 @RestController
 @RequestMapping("/monitor/logininfor")

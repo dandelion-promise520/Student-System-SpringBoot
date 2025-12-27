@@ -9,7 +9,7 @@ import com.dandelion.common.utils.StringUtils;
 /**
  * 获取IP方法
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class IpUtils
 {

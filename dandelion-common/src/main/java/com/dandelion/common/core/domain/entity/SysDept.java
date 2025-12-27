@@ -13,7 +13,7 @@ import com.dandelion.common.core.domain.BaseEntity;
 /**
  * 部门表 sys_dept
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class SysDept extends BaseEntity
 {

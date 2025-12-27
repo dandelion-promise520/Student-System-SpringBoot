@@ -8,7 +8,7 @@ import com.dandelion.system.domain.StuScore;
 /**
  * 学生成绩Service接口
  * 
- * @author ruoyi
+ * @author dandelion
  * @date 2025-12-25
  */
 public interface IStuScoreService 
@@ -64,7 +64,7 @@ public interface IStuScoreService
     /**
      * 课程Service接口
      *
-     * @author ruoyi
+     * @author dandelion
      * @date 2025-12-25
      */
     interface IStuCourseService

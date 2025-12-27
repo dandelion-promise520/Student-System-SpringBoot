@@ -7,7 +7,7 @@ import com.dandelion.common.core.text.Convert;
 /**
  * 权限信息
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class PermissionContextHolder
 {

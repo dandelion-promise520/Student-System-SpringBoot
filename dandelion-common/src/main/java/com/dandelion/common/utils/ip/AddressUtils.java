@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
-import com.dandelion.common.config.RuoYiConfig;
+import com.dandelion.common.config.DandelionConfig;
 import com.dandelion.common.constant.Constants;
 import com.dandelion.common.utils.StringUtils;
 import com.dandelion.common.utils.http.HttpUtils;
@@ -12,7 +12,7 @@ import com.dandelion.common.utils.http.HttpUtils;
 /**
  * 获取地址类
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class AddressUtils
 {
@@ -31,7 +31,7 @@ public class AddressUtils
         {
             return "内网IP";
         }
-        if (RuoYiConfig.isAddressEnabled())
+        if (DandelionConfig.isAddressEnabled())
         {
             try
             {

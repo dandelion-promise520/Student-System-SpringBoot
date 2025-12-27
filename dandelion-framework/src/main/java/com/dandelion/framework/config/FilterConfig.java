@@ -17,7 +17,7 @@ import com.dandelion.common.utils.StringUtils;
 /**
  * Filter配置
  *
- * @author ruoyi
+ * @author dandelion
  */
 @Configuration
 public class FilterConfig

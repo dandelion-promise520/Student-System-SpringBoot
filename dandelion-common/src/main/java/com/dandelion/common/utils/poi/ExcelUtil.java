@@ -74,7 +74,7 @@ import com.dandelion.common.annotation.Excel;
 import com.dandelion.common.annotation.Excel.ColumnType;
 import com.dandelion.common.annotation.Excel.Type;
 import com.dandelion.common.annotation.Excels;
-import com.dandelion.common.config.RuoYiConfig;
+import com.dandelion.common.config.DandelionConfig;
 import com.dandelion.common.core.domain.AjaxResult;
 import com.dandelion.common.core.text.Convert;
 import com.dandelion.common.exception.UtilException;
@@ -89,7 +89,7 @@ import com.dandelion.common.utils.reflect.ReflectUtils;
 /**
  * Excel相关处理
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class ExcelUtil<T>
 {
@@ -1482,7 +1482,7 @@ public class ExcelUtil<T>
      */
     public String getAbsoluteFile(String filename)
     {
-        String downloadPath = RuoYiConfig.getDownloadPath() + filename;
+        String downloadPath = DandelionConfig.getDownloadPath() + filename;
         File desc = new File(downloadPath);
         if (!desc.getParentFile().exists())
         {

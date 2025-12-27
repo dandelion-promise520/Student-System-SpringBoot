@@ -5,7 +5,7 @@ import com.dandelion.common.utils.Arith;
 /**
  * CPU相关信息
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class Cpu
 {

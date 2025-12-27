@@ -30,7 +30,7 @@ import com.dandelion.quartz.util.ScheduleUtils;
 /**
  * 调度任务信息操作处理
  * 
- * @author ruoyi
+ * @author dandelion
  */
 @RestController
 @RequestMapping("/monitor/job")

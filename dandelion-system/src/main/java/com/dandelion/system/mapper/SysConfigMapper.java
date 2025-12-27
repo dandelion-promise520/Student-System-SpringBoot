@@ -6,7 +6,7 @@ import com.dandelion.system.domain.SysConfig;
 /**
  * 参数配置 数据层
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public interface SysConfigMapper
 {

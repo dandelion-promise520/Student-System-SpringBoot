@@ -35,7 +35,7 @@ import com.dandelion.system.service.ISysUserService;
 /**
  * 用户信息
  * 
- * @author ruoyi
+ * @author dandelion
  */
 @RestController
 @RequestMapping("/system/user")

@@ -3,7 +3,7 @@ package com.dandelion.common.utils.uuid;
 /**
  * ID生成器工具类
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class IdUtils
 {

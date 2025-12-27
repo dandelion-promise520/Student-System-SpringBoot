@@ -3,7 +3,7 @@ package com.dandelion.common.exception;
 /**
  * 工具类异常
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class UtilException extends RuntimeException
 {

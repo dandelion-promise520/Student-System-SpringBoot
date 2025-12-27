@@ -10,7 +10,7 @@ import com.dandelion.system.service.ISysOperLogService;
 /**
  * 操作日志 服务层处理
  * 
- * @author ruoyi
+ * @author dandelion
  */
 @Service
 public class SysOperLogServiceImpl implements ISysOperLogService

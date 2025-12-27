@@ -16,7 +16,7 @@ import com.dandelion.common.exception.ServiceException;
 /**
  * 安全服务工具类
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class SecurityUtils
 {

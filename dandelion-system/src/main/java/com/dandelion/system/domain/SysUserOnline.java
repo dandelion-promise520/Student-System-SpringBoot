@@ -3,7 +3,7 @@ package com.dandelion.system.domain;
 /**
  * 当前在线会话
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class SysUserOnline
 {

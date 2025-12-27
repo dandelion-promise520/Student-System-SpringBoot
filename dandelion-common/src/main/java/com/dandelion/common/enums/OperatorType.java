@@ -3,7 +3,7 @@ package com.dandelion.common.enums;
 /**
  * 操作人类别
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public enum OperatorType
 {

@@ -39,7 +39,7 @@ import com.dandelion.generator.util.VelocityUtils;
 /**
  * 业务 服务层实现
  * 
- * @author ruoyi
+ * @author dandelion
  */
 @Service
 public class GenTableServiceImpl implements IGenTableService

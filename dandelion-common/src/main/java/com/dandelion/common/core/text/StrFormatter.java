@@ -5,7 +5,7 @@ import com.dandelion.common.utils.StringUtils;
 /**
  * 字符串格式化
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class StrFormatter
 {

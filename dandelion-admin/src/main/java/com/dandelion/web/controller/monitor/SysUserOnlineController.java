@@ -26,7 +26,7 @@ import com.dandelion.system.service.ISysUserOnlineService;
 /**
  * 在线用户监控
  * 
- * @author ruoyi
+ * @author dandelion
  */
 @RestController
 @RequestMapping("/monitor/online")

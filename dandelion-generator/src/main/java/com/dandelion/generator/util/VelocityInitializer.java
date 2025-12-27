@@ -7,7 +7,7 @@ import com.dandelion.common.constant.Constants;
 /**
  * VelocityEngine工厂
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class VelocityInitializer
 {

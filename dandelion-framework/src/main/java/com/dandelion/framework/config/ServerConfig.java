@@ -7,7 +7,7 @@ import com.dandelion.common.utils.ServletUtils;
 /**
  * 服务相关配置
  * 
- * @author ruoyi
+ * @author dandelion
  */
 @Component
 public class ServerConfig

@@ -9,7 +9,7 @@ import com.dandelion.common.core.domain.BaseEntity;
 /**
  * 课程对象 stu_course
  * 
- * @author ruoyi
+ * @author dandelion
  * @date 2025-12-25
  */
 public class StuCourse extends BaseEntity

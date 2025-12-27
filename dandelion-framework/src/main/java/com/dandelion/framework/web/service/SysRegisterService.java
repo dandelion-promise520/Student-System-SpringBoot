@@ -22,7 +22,7 @@ import com.dandelion.system.service.ISysUserService;
 /**
  * 注册校验方法
  * 
- * @author ruoyi
+ * @author dandelion
  */
 @Component
 public class SysRegisterService

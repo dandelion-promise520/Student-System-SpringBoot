@@ -18,7 +18,7 @@ import com.dandelion.quartz.service.ISysJobLogService;
 /**
  * 抽象quartz调用
  *
- * @author ruoyi
+ * @author dandelion
  */
 public abstract class AbstractQuartzJob implements Job
 {

@@ -27,7 +27,7 @@ import com.dandelion.system.service.ISysMenuService;
 /**
  * 登录验证
  * 
- * @author ruoyi
+ * @author dandelion
  */
 @RestController
 public class SysLoginController

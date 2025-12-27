@@ -8,7 +8,7 @@ import com.dandelion.common.utils.sql.SqlUtil;
 /**
  * 分页工具类
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class PageUtils extends PageHelper
 {

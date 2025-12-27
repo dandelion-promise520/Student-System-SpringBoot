@@ -3,7 +3,7 @@ package com.dandelion.common.constant;
 /**
  * 用户常量信息
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class UserConstants
 {

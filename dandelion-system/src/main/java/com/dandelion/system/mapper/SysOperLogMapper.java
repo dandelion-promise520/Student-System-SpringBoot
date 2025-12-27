@@ -6,7 +6,7 @@ import com.dandelion.system.domain.SysOperLog;
 /**
  * 操作日志 数据层
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public interface SysOperLogMapper
 {

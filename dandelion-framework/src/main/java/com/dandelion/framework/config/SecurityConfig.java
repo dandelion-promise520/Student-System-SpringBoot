@@ -24,7 +24,7 @@ import com.dandelion.framework.security.handle.LogoutSuccessHandlerImpl;
 /**
  * spring security配置
  * 
- * @author ruoyi
+ * @author dandelion
  */
 @EnableMethodSecurity(prePostEnabled = true, securedEnabled = true)
 @Configuration

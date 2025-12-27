@@ -13,7 +13,7 @@ import com.dandelion.common.core.text.StrFormatter;
 /**
  * 字符串工具类
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class StringUtils extends org.apache.commons.lang3.StringUtils
 {

@@ -8,7 +8,7 @@ import com.dandelion.system.domain.SysUserRole;
 /**
  * 角色业务层
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public interface ISysRoleService
 {

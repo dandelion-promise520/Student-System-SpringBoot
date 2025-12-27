@@ -31,7 +31,7 @@ import com.dandelion.system.service.ISysUserService;
 /**
  * 登录校验方法
  * 
- * @author ruoyi
+ * @author dandelion
  */
 @Component
 public class SysLoginService

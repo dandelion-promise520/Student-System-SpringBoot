@@ -12,7 +12,7 @@ import com.dandelion.common.utils.StringUtils;
 /**
  * Treeselect树结构实体类
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class TreeSelect implements Serializable
 {

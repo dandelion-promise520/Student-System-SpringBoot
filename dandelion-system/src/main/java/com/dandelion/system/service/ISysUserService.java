@@ -7,7 +7,7 @@ import com.dandelion.common.core.domain.entity.SysUser;
 /**
  * 用户 业务层
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public interface ISysUserService
 {

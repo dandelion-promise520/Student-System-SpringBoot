@@ -17,7 +17,7 @@ import com.dandelion.common.enums.HttpMethod;
 /**
  * 防止XSS攻击的过滤器
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class XssFilter implements Filter
 {

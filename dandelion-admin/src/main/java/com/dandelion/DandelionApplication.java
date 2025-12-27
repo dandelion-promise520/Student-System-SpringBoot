@@ -10,11 +10,11 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
  * @author dandelion
  */
 @SpringBootApplication(exclude = { DataSourceAutoConfiguration.class })
-public class DaApplication
+public class DandelionApplication
 {
     public static void main(String[] args) {
         // System.setProperty("spring.devtools.restart.enabled", "false");
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(DandelionApplication.class, args);
         System.out.println(
                 "       .  '  .          \n" +
                         "     '   \\ | /   '      * 项目如蒲公英般 \n" +

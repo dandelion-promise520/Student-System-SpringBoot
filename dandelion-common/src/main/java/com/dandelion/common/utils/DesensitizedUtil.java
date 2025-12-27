@@ -3,7 +3,7 @@ package com.dandelion.common.utils;
 /**
  * 脱敏工具类
  *
- * @author ruoyi
+ * @author dandelion
  */
 public class DesensitizedUtil
 {

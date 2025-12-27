@@ -5,7 +5,7 @@ import com.dandelion.common.exception.base.BaseException;
 /**
  * 文件信息异常类
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class FileException extends BaseException
 {

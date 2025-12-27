@@ -6,7 +6,7 @@ import com.dandelion.common.utils.StringUtils;
 /**
  * 基础异常
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class BaseException extends RuntimeException
 {

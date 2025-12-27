@@ -3,7 +3,7 @@ package com.dandelion.common.constant;
 /**
  * 任务调度通用常量
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class ScheduleConstants
 {

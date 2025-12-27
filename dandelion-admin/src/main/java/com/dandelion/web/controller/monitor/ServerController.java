@@ -10,7 +10,7 @@ import com.dandelion.framework.web.domain.Server;
 /**
  * 服务器监控
  * 
- * @author ruoyi
+ * @author dandelion
  */
 @RestController
 @RequestMapping("/monitor/server")

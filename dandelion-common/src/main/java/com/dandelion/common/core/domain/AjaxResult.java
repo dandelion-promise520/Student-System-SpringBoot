@@ -8,7 +8,7 @@ import com.dandelion.common.utils.StringUtils;
 /**
  * 操作消息提醒
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class AjaxResult extends HashMap<String, Object>
 {

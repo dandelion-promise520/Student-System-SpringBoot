@@ -3,7 +3,7 @@ package com.dandelion.common.core.domain.model;
 /**
  * 用户登录对象
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class LoginBody
 {

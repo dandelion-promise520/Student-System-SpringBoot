@@ -6,7 +6,7 @@ import com.dandelion.system.domain.StuCourse;
 /**
  * 课程Service接口
  * 
- * @author ruoyi
+ * @author dandelion
  * @date 2025-12-25
  */
 public interface IStuCourseService 

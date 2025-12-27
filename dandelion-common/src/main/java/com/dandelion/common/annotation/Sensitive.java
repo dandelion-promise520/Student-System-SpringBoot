@@ -12,7 +12,7 @@ import com.dandelion.common.enums.DesensitizedType;
 /**
  * 数据脱敏注解
  *
- * @author ruoyi
+ * @author dandelion
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)

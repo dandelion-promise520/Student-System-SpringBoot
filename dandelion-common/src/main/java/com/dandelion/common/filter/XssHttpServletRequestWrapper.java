@@ -15,7 +15,7 @@ import com.dandelion.common.utils.html.EscapeUtil;
 /**
  * XSS过滤处理
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class XssHttpServletRequestWrapper extends HttpServletRequestWrapper
 {

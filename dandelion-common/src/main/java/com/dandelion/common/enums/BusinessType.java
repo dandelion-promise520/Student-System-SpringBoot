@@ -3,7 +3,7 @@ package com.dandelion.common.enums;
 /**
  * 业务操作类型
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public enum BusinessType
 {

@@ -22,7 +22,7 @@ import com.dandelion.common.utils.ip.IpUtils;
 /**
  * 限流处理
  *
- * @author ruoyi
+ * @author dandelion
  */
 @Aspect
 @Component

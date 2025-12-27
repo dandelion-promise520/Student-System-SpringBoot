@@ -25,7 +25,7 @@ import com.dandelion.system.service.ISysDictTypeService;
 /**
  * 数据字典信息
  * 
- * @author ruoyi
+ * @author dandelion
  */
 @RestController
 @RequestMapping("/system/dict/type")

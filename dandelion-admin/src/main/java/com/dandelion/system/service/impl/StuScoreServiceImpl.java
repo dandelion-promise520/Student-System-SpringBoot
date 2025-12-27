@@ -11,7 +11,7 @@ import com.dandelion.system.service.IStuScoreService;
 /**
  * 学生成绩Service业务层处理
  * 
- * @author ruoyi
+ * @author dandelion
  * @date 2025-12-25
  */
 @Service

@@ -5,7 +5,7 @@ import com.dandelion.common.utils.StringUtils;
 /**
  * 分页数据
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class PageDomain
 {

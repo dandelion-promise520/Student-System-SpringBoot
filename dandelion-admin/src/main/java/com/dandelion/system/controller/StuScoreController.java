@@ -29,7 +29,7 @@ import com.dandelion.common.core.page.TableDataInfo;
 /**
  * 学生成绩Controller
  * 
- * @author ruoyi
+ * @author dandelion
  * @date 2025-12-25
  */
 @RestController

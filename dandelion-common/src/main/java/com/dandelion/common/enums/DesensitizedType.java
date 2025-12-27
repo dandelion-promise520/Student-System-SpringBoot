@@ -6,7 +6,7 @@ import com.dandelion.common.utils.DesensitizedUtil;
 /**
  * 脱敏类型
  *
- * @author ruoyi
+ * @author dandelion
  */
 public enum DesensitizedType
 {

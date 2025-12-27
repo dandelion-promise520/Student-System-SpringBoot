@@ -5,7 +5,7 @@ import com.dandelion.common.utils.StringUtils;
 /**
  * 缓存信息
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class SysCache
 {

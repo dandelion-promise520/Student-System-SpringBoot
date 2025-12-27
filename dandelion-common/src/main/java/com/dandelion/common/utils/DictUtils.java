@@ -13,7 +13,7 @@ import com.dandelion.common.utils.spring.SpringUtils;
 /**
  * 字典工具类
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class DictUtils
 {

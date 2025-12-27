@@ -22,7 +22,7 @@ import com.dandelion.common.utils.html.EscapeUtil;
 /**
  * 全局异常处理器
  * 
- * @author ruoyi
+ * @author dandelion
  */
 @RestControllerAdvice
 public class GlobalExceptionHandler

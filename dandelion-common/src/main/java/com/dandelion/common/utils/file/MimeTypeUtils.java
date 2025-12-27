@@ -3,7 +3,7 @@ package com.dandelion.common.utils.file;
 /**
  * 媒体类型工具类
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class MimeTypeUtils
 {

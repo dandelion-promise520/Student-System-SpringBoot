@@ -3,7 +3,7 @@ package com.dandelion.common.utils.sign;
 /**
  * Base64工具类
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public final class Base64
 {

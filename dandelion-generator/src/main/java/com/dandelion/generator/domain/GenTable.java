@@ -11,7 +11,7 @@ import com.dandelion.common.utils.StringUtils;
 /**
  * 业务表 gen_table
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class GenTable extends BaseEntity
 {

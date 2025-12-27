@@ -3,20 +3,20 @@ package com.dandelion.web.controller.system;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.dandelion.common.config.RuoYiConfig;
+import com.dandelion.common.config.DandelionConfig;
 import com.dandelion.common.utils.StringUtils;
 
 /**
  * 首页
  *
- * @author ruoyi
+ * @author dandelion
  */
 @RestController
 public class SysIndexController
 {
     /** 系统基础配置 */
     @Autowired
-    private RuoYiConfig ruoyiConfig;
+    private DandelionConfig ruoyiConfig;
 
     /**
      * 访问首页，提示语

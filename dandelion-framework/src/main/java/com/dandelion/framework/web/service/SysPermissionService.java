@@ -17,7 +17,7 @@ import com.dandelion.system.service.ISysRoleService;
 /**
  * 用户权限处理
  * 
- * @author ruoyi
+ * @author dandelion
  */
 @Component
 public class SysPermissionService

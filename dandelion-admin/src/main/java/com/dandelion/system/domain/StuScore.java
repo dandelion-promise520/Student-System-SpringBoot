@@ -11,7 +11,7 @@ import com.dandelion.common.core.domain.BaseEntity;
 /**
  * 学生成绩对象 stu_score
  * 
- * @author ruoyi
+ * @author dandelion
  * @date 2025-12-25
  */
 public class StuScore extends BaseEntity

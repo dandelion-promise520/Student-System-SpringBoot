@@ -3,7 +3,7 @@ package com.dandelion.common.exception;
 /**
  * 全局异常
  * 
- * @author ruoyi
+ * @author dandelion
  */
 public class GlobalException extends RuntimeException
 {

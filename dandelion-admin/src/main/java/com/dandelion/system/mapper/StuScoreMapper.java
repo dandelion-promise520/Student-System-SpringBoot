@@ -6,7 +6,7 @@ import com.dandelion.system.domain.StuScore;
 /**
  * 学生成绩Mapper接口
  * 
- * @author ruoyi
+ * @author dandelion
  * @date 2025-12-25
  */
 public interface StuScoreMapper 
