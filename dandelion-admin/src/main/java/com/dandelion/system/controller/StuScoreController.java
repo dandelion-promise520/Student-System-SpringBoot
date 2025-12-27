@@ -23,6 +23,8 @@ import com.dandelion.common.core.domain.AjaxResult;
 import com.dandelion.common.enums.BusinessType;
 import com.dandelion.system.domain.StuScore;
 import com.dandelion.system.service.IStuScoreService;
+import org.springframework.web.multipart.MultipartFile;
+import com.dandelion.common.utils.poi.ExcelUtil;
 import com.dandelion.common.utils.poi.ExcelUtil;
 import com.dandelion.common.core.page.TableDataInfo;
 
@@ -43,6 +45,7 @@ public class StuScoreController extends BaseController
     private IStuStudentService studentService;
     @Autowired
     private IStuCourseService courseService;
+
 
     /**
      * 获取学生和课程的下拉列表数据
@@ -88,6 +91,30 @@ public class StuScoreController extends BaseController
     public AjaxResult getInfo(@PathVariable("scoreId") Long scoreId)
     {
         return success(stuScoreService.selectStuScoreByScoreId(scoreId));
+    }
+
+    /**
+     * 导入学生成绩数据
+     */
+    @Log(title = "学生成绩", businessType = BusinessType.IMPORT)
+    @PreAuthorize("@ss.hasPermi('system:score:import')")
+    @PostMapping("/importData")
+    public AjaxResult importData(MultipartFile file, boolean updateSupport) throws Exception
+    {
+        ExcelUtil<StuScore> util = new ExcelUtil<StuScore>(StuScore.class);
+        List<StuScore> scoreList = util.importExcel(file.getInputStream());
+        String message = stuScoreService.importScore(scoreList, updateSupport);
+        return AjaxResult.success(message);
+    }
+
+    /**
+     * 下载导入模板
+     */
+    @PostMapping("/importTemplate")
+    public void importTemplate(HttpServletResponse response)
+    {
+        ExcelUtil<StuScore> util = new ExcelUtil<StuScore>(StuScore.class);
+        util.importTemplateExcel(response, "学生成绩导入模板");
     }
 
     /**

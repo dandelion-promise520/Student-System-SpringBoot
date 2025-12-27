@@ -62,6 +62,15 @@ public interface IStuScoreService
     public int deleteStuScoreByScoreId(Long scoreId);
 
     /**
+     * 导入成绩数据
+     * 
+     * @param scoreList 成绩列表
+     * @param isUpdateSupport 是否更新已存在的数据
+     * @return 导入结果描述
+     */
+    public String importScore(List<StuScore> scoreList, Boolean isUpdateSupport);
+
+    /**
      * 课程Service接口
      *
      * @author dandelion
